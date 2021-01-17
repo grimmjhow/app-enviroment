@@ -1,3 +1,56 @@
 gateway:
- rest:
-  api: localhost:8080/stage
+    admin:
+        password: $2a$10$WanNqQg18UN6cGuaATQe9ecBV8O7kXcUGnA.4RMZacz1wk2q.p4UG
+        username: admin
+    mail:
+        expiration:
+            time: 30
+        resetpassword:
+            subject: Gateway - Reset de Senha
+    password:
+        reset:
+            address: http://localhost:8080/password/reset?token=
+resident:
+    privileges:
+        configuration: http://localhost:8081/privileges
+server:
+    port: 8080
+    servlet:
+        context-path: /
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: admin
+        url: jdbc:postgresql://localhost:5432/gateway
+        username: postgres
+    jackson:
+        deserialization:
+            fail-on-unknown-properties: false
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                temp:
+                    use_jdbc_metadata_defaults: false
+        show-sql: false
+    mail:
+        host: smtp.gmail.com
+        password: wftmhmpwrjcpsqtd
+        port: 587
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+        username: felipe.cife@gmail.com
+    messages:
+        encoding: ISO-8859-1
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+    profiles:
+        active: dev
