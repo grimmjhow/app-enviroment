@@ -1,3 +1,7 @@
 spring:
   application:
     name: gateway-app
+
+gateway:
+  security:
+    enabled: true
