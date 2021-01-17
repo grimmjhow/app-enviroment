@@ -1,0 +1,7 @@
+spring:
+ application:
+  name: gateway-app
+
+gateway:
+ rest:
+  api: localhost:8080/test
