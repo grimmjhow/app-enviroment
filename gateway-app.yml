@@ -56,3 +56,9 @@ spring:
             suffix: .jsp
     profiles:
         active: dev
+
+security:
+    jwt:
+        token:
+            secret-key: ${SECRET_KEY:fmonteiro}
+            expire-length: ${EXPIRATION_TIME:3600000}
